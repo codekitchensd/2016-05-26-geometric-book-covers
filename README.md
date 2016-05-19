@@ -6,7 +6,7 @@ This class is about how you can use simple shapes to create compelling designs.
 
 Many iconic designers have used simple geometries in their work.
 
-// Include pictures
+<img src="https://github.com/codekitchensd/2016-05-26-geometric-book-covers/blob/master/readme_images/ibm_logo_rand.jpg" width="350">       <img src="https://github.com/codekitchensd/2016-05-26-geometric-book-covers/blob/master/readme_images/general_dynamics.jpg" width="350">  
 
 This class is inspired by Rune Madsen's [class]() at NYU-ITP.
 
