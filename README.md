@@ -15,10 +15,10 @@ This class is inspired by Rune Madsen's [class]() at NYU-ITP.
 We'll be using Rune.js to replicate geometric book cover designs.   
 
 Today, we'll learn how to:
--Analyze the components of a successful design
--Break a design into its key components (color, shape, pattern)
--Build a function that creates a programmatic design
--Integrate randomization into a program
+- Analyze the components of a successful design
+- Break a design into its key components (color, shape, pattern)
+- Build a function that creates a programmatic design
+- Integrate randomization into a program
 
 ## Introduction to Rune.js
 
@@ -26,10 +26,76 @@ Today, we'll learn how to:
 
 ### Setting up a Rune.js project
 
+Our instructions are adapted from Rune's [setup instructions](http://runemadsen.github.io/rune.js/index.html).
+
+To set up a Rune.js project, download the latest Rune.js release. Place the rune.js file in the same directory as your HTML file. Include the rune.js file as a script inside of the <head> tag. 
+
+Now, create a file called sketch.js. Include this file in the <body> tag of your HTML document.  You can also use Rune.js with node, but we won't cover that here.
+
+For ease of setup, feel free to copy and modify our RuneExample folder.  These files have the necessary scripts included.
+
+### Getting started with Rune
+
+Our sample project includes sample code for drawing a simple shape in rune.  We include the rune.js library and instantiate a Rune canvas like so:
+
+```javascript
+var r = new Rune({
+  container: "body",
+  width: 500,
+  height: 400
+});
+
+r.rect(0, 0, 200, 200)
+  .fill(0, 0, 255);
+
+r.draw();
+```
+
 ### Basic drawing commands
 
-### Our Example Project
+```javascript
+r.line(0, 0, 100, 100);
 
+r.rect(0, 0, 100, 50);
+
+r.ellipse(0, 0, 100, 50);
+
+r.circle(0, 0, 100);
+
+r.triangle(0, 0, 100, 0, 100, 100);
+
+r.polygon(0, 0)
+  .lineTo(100, 0)
+  .lineTo(100, 100)
+  .lineTo(0, 100);
+
+r.path(0, 0)
+  .lineTo(100, 0)
+  .curveTo(100, 100, 0, 100, 0, 0);
+  ```
+
+
+# Rune Examples
+
+Check out the full documentation.
+
+- [Form Examples](http://printingcode.runemadsen.com/examples/#form)
+- [Color Examples](http://printingcode.runemadsen.com/examples/#color)
+- [Repetition Examples](http://printingcode.runemadsen.com/examples/#repetition)
+- [Randomization Examples](http://printingcode.runemadsen.com/examples/#randomization)
+- [Grid Examples](http://printingcode.runemadsen.com/examples/#grid)
 
 ## Book Cover Exercise
+
+## Added Challenge
+
+If you're
+### Book Cover Examples
+
+We've included some examples
+
+
+
+
+
 
