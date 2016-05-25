@@ -87,9 +87,10 @@ Check out the full documentation.
 
 ## Book Cover Exercise
 
+<img src="https://github.com/codekitchensd/2016-05-26-geometric-book-covers/blob/master/readme_images/azorin.jpg" width="350"> <img src="https://github.com/codekitchensd/2016-05-26-geometric-book-covers/blob/master/readme_images/nodoubt.jpg" width="350"> <img src="https://github.com/codekitchensd/2016-05-26-geometric-book-covers/blob/master/readme_images/bertrand_russell.jpg" width="350"> <img src="https://github.com/codekitchensd/2016-05-26-geometric-book-covers/blob/master/readme_images/modern_psych.jpg" width="350"> 
+
 ## Added Challenge
 
-If you're
 ### Book Cover Examples
 
 We've included some examples
