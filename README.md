@@ -43,6 +43,8 @@ r.draw();
 
 ### Basic drawing commands
 
+Rune.js includes commands for drawing many basic shapes. You can even draw your own polygons! For a full description of how each shape function works, check out the full [documentation](http://runemadsen.github.io/rune.js/documentation.html).
+
 ```javascript
 r.line(0, 0, 100, 100);
 
@@ -67,7 +69,7 @@ r.path(0, 0)
 
 ### Rune Examples
 
-Check out the full documentation.
+These examples are very useful for getting started quickly with Rune.js.  They can show you how to draw regularly-spaced circles, or randomize colors in your design. We recommend checking these out to help you get started.
 
 - [Form Examples](http://printingcode.runemadsen.com/examples/#form)
 - [Color Examples](http://printingcode.runemadsen.com/examples/#color)
@@ -77,7 +79,7 @@ Check out the full documentation.
 
 # Today's Goals
 
-We'll be using Rune.js to replicate geometric book cover designs. Check out the designs in the __ file. 
+We'll be using Rune.js to replicate geometric book cover designs. Check out the designs in the BookFolders directory. 
 
 Today, we'll learn how to:
 - Analyze the components of a successful design
@@ -89,8 +91,7 @@ Today, we'll learn how to:
 
 ### Book Cover Examples
 
-A handful of covers have been implemented in the Examples directory.
-
+A handful of covers have been implemented in the Examples directory. These can serve as inspiration for how to write a program "in the style" of a book cover.
 
 ## Book Cover Exercise
 
