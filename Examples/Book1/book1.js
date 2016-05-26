@@ -94,11 +94,16 @@ var circleGrid = function(){
   }
 }
 
+// Clear all children of the stage
+var clearStage = function() {
+  r.stage.children = [];
+}
+
 circleGrid();
 
-
-
 r.on('click', function() {
+
+  clearStage();
   circleGrid();
   
   r.draw();

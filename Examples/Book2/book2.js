@@ -11,21 +11,8 @@ var r = new Rune({
   // debug: true
 });
 
-// Use Rune.js's grid system
-// This allows us to easily add objects to 
-// regularly-spaced "cells"
 var numRows = 20;
 var numCols = 20;
-
-var grid = r.grid({
-  x: 0, // x position of grid
-  y: 0, // y position of grid
-  width: r.width,
-  height: r.height,
-  gutter: 0,
-  columns: numCols,
-  rows: numRows
-});
 
 // A list of colors that will be used in our design
 var colorlist = [
@@ -57,10 +44,23 @@ function randomColor() {
 }
 
 // These will be the same value.
-var triW = r.width / numCols;
+var triW = r.width / numCols +2;
 
 // Generate triangles in each grid cell
 var generateTriangles = function() {
+
+  // Use Rune.js's grid system
+  // This allows us to easily add objects to 
+  // regularly-spaced "cells"
+  var grid = r.grid({
+    x: 0, // x position of grid
+    y: 0, // y position of grid
+    width: r.width,
+    height: r.height,
+    gutter: 0,
+    columns: numCols,
+    rows: numRows
+  });
 
   // For each cell in our grid...
   for (var i = 0; i < numCols; i++){
@@ -113,12 +113,19 @@ var generateTriangles = function() {
 }
 }
 
+// Clear all children of the stage
+var clearStage = function() {
+  r.stage.children = [];
+}
 // First call to generate triangles
 generateTriangles();
 
 // Regenerate triangles on "click"
 r.on('click', function() {
+  
+  clearStage();
   generateTriangles();
+
   r.draw();
 });
 
