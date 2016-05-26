@@ -85,7 +85,7 @@ Today, we'll learn how to:
 - Build a function that creates a programmatic design
 - Integrate randomization into a program
 
-<img src="https://github.com/codekitchensd/2016-05-26-geometric-book-covers/blob/master/readme_images/ibm_logo_rand.jpg" width="350"> 
+<img src="https://github.com/codekitchensd/2016-05-26-geometric-book-covers/blob/master/readme_images/azorin.jpg" width="350"> <img src="https://github.com/codekitchensd/2016-05-26-geometric-book-covers/blob/master/readme_images/nodoubt.jpg" width="350"> <img src="https://github.com/codekitchensd/2016-05-26-geometric-book-covers/blob/master/readme_images/bertrand_russell.jpg" width="350"> <img src="https://github.com/codekitchensd/2016-05-26-geometric-book-covers/blob/master/readme_images/modern_psych.jpg" width="350"> 
 
 ### Book Cover Examples
 
