@@ -8,17 +8,7 @@ Many iconic designers have used simple geometries in their work.
 
 <img src="https://github.com/codekitchensd/2016-05-26-geometric-book-covers/blob/master/readme_images/ibm_logo_rand.jpg" width="350">       <img src="https://github.com/codekitchensd/2016-05-26-geometric-book-covers/blob/master/readme_images/general_dynamics.jpg" width="350">  
 
-This class is inspired by Rune Madsen's [class]() at NYU-ITP.
-
-# Today's Exercise
-
-We'll be using Rune.js to replicate geometric book cover designs.   
-
-Today, we'll learn how to:
-- Analyze the components of a successful design
-- Break a design into its key components (color, shape, pattern)
-- Build a function that creates a programmatic design
-- Integrate randomization into a program
+This workshop is inspired by Rune Madsen's [Programming Design Systems](http://printingcode.runemadsen.com/) course at NYU-ITP.
 
 ## Introduction to Rune.js
 
@@ -75,7 +65,7 @@ r.path(0, 0)
   ```
 
 
-# Rune Examples
+### Rune Examples
 
 Check out the full documentation.
 
@@ -85,15 +75,36 @@ Check out the full documentation.
 - [Randomization Examples](http://printingcode.runemadsen.com/examples/#randomization)
 - [Grid Examples](http://printingcode.runemadsen.com/examples/#grid)
 
-## Book Cover Exercise
+# Today's Goals
 
-<img src="https://github.com/codekitchensd/2016-05-26-geometric-book-covers/blob/master/readme_images/azorin.jpg" width="350"> <img src="https://github.com/codekitchensd/2016-05-26-geometric-book-covers/blob/master/readme_images/nodoubt.jpg" width="350"> <img src="https://github.com/codekitchensd/2016-05-26-geometric-book-covers/blob/master/readme_images/bertrand_russell.jpg" width="350"> <img src="https://github.com/codekitchensd/2016-05-26-geometric-book-covers/blob/master/readme_images/modern_psych.jpg" width="350"> 
+We'll be using Rune.js to replicate geometric book cover designs. Check out the designs in the __ file. 
 
-## Added Challenge
+Today, we'll learn how to:
+- Analyze the components of a successful design
+- Break a design into its key components (color, shape, pattern)
+- Build a function that creates a programmatic design
+- Integrate randomization into a program
+
+<img src="https://github.com/codekitchensd/2016-05-26-geometric-book-covers/blob/master/readme_images/ibm_logo_rand.jpg" width="350"> 
 
 ### Book Cover Examples
 
-We've included some examples
+A handful of covers have been implemented in the Examples directory.
+
+
+## Book Cover Exercise
+
+Choose 1-2 book covers from the directory. Pick your favorite to start with.
+
+Spend 5-10 minutes brainstorming how you would translate this design into code. What shapes make up the pattern? Are there circles? Squares? Complex polygons? Think of the drawing commands you might use to reproduce these shapes.
+
+Make note of the color and composition of the design.  Will you need to repeat a shape multiple times? How are the colors chosen for each shape? Take time to devise a strategy for programming your design.
+
+After you have come up with a rough plan, you can start coding. Try to create a function that produces an image "in the style of" your chosen cover. The final outcome should not have to be a pixel for pixel match, but it should have the same style.
+
+### Added challenge
+
+If you are feeling up to a challenge, try to include some randomization in your design. Use Rune.js's on("click") function to regenerate your pattern every time you click the page!
 
 
 
