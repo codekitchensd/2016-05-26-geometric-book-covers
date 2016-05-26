@@ -1,89 +1,122 @@
+// Alex Olivier
+// Recreation of Bertrand Russell's "A Inquiry into Meaning and Truth"
+// Written for Code Kitchen, 5/26/2016
+
+// Create a new Rune.js environment
+// This is like creating our canvas
 var r = new Rune({
   container: "body",
-  width: 1000,
-  height: 1000,
+  width: 1000, // Canvas width
+  height: 1000, // Canvas height
   // debug: true
 });
+
+// Use Rune.js's grid system
+// This allows us to easily add objects to 
+// regularly-spaced "cells"
+var numRows = 20;
+var numCols = 20;
 
 var grid = r.grid({
   x: 0, // x position of grid
   y: 0, // y position of grid
-  width: r.width - 100,
-  height: r.height - 100,
+  width: r.width,
+  height: r.height,
   gutter: 0,
-  columns: 6,
-  rows: 6
+  columns: numCols,
+  rows: numRows
 });
 
+// A list of colors that will be used in our design
 var colorlist = [
   
   new Rune.Color(54,20,17), // brown
   new Rune.Color(34,121,146), // blue
-  new Rune.Color(0,0,0),
-  new Rune.Color(243,0,20),
-  new Rune.Color(255,255,255)
+  new Rune.Color(0,0,0), // black
+  new Rune.Color(243,0,20), // red
+  new Rune.Color(255,255,255) // white
 ];
 
+// Choose a random color
+// We have a higher probability of choosing brown or blue
+// This reflects the higher amount of brown and blue in the design
 function randomColor() {
 
+  // Choose a random value between 0-10
   var randVal = Rune.random(0, 10);
 
+  // If our number < 8, we will choose blue or brown
   if (randVal < 8){
       var index = Math.round(Rune.random(1));
       return colorlist[index];
   }else{
-
-  var index = Math.round(Rune.random(2,colorlist.length-1));
-  return colorlist[index];
+    // Otherwise, we choose red, white, or black
+    var index = Math.round(Rune.random(2,colorlist.length-1));
+    return colorlist[index];
   }
-
 }
 
+// These will be the same value.
+var triW = r.width / numCols;
+
+// Generate triangles in each grid cell
 var generateTriangles = function() {
-for (var i = 0; i < 6; i++){
-  for (var j = 0; j < 6; j++){
 
-    var randVal = r.random(0,10);
+  // For each cell in our grid...
+  for (var i = 0; i < numCols; i++){
+    for (var j = 0; j < numRows; j++){
 
-    var t, t2;
-    if (randVal < 5){
+      // This random value will be used
+      // to determine what direction the triangles face
+      var randVal = r.random(0,10);
 
-    var c1 = randomColor();
-    t = r.triangle(0,0, 0,150,150,0)
-    .fill(c1)
-    .stroke(c1);
+      // For each cell, create 2 triangles
+      var t1, t2;
 
-    var c2 = randomColor();
-    t2 = r.triangle(0,150,150,150,150,0)
-    .fill(c2)
-    .stroke(c2);
+      // If < 5, triangles face one way
+      if (randVal < 5){
 
-    }else{
+        // Choose random color for triangle 1
+        var c1 = randomColor();
+        t1 = r.triangle(0,0, 0,triW,triW,0)
+        .fill(c1)
+        .stroke(c1);
 
-      var c1 = randomColor();
-      t = r.triangle(0,0,0,150,150,150)
-    .fill(c1)
-    .stroke(c1);
+        // Choose random color for triangle 2
+        var c2 = randomColor();
+        t2 = r.triangle(0,triW,triW,triW,triW,0)
+        .fill(c2)
+        .stroke(c2);
 
-    var c2 = randomColor();
-    t2 = r.triangle(0,0,150,0,150,150)
-    .fill(c2)
-    .stroke(c2);
+      // Otherwise, triangles face the other way
+      }else{
 
-    }
-    // draw triangle
+        // Choose random color for triangle 1
+        var c1 = randomColor();
+        t1 = r.triangle(0,0,0,triW,triW,triW)
+        .fill(c1)
+        .stroke(c1);
 
+        // Choose random color for triangle 2
+        var c2 = randomColor();
+        t2 = r.triangle(0,0,triW,0,triW,triW)
+        .fill(c2)
+        .stroke(c2);
 
-    console.log("adding");
-    grid.add(t, i + 1,j + 1);
+      }
+
+    // Add both triangles to grid
+    grid.add(t1, i + 1,j + 1);
     grid.add(t2, i + 1,j + 1);
 
   }
 }
 }
 
+// First call to generate triangles
 generateTriangles();
 
+// Regenerate triangles on "click"
 r.on('click', function() {
   generateTriangles();
   r.draw();
