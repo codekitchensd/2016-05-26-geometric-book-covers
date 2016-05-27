@@ -7,10 +7,12 @@ var r = new Rune({
 });
 
 function bookcover() {
+    var bgPadding = 40 + Math.ceil(Math.random() * 40);
     var params = {
-        bgPadding: 40 + Math.ceil(Math.random() * 40),
+        bgPadding: bgPadding,
+        bgPadding2: bgPadding + 5 + Math.ceil(Math.random() * 20),
         stripes: {
-            width: 10 + Math.ceil(Math.random() * 30),
+            width: 10 + Math.ceil(Math.random() * 20),
             colors: [
                 '#94630F',
                 '#161519'
@@ -61,30 +63,29 @@ function bookcover() {
     addStripesToGroup(circleGroup);
     circleGroup.rotate(10 * Math.random() * 45, r.width / 2, r.height / 2);
 
-    //var innerCircleGroup = r.group(0, 0);
-    //addStripesToGroup(innerCircleGroup);
-
+    var innerCircleGroup = r.group(0, 0);
+    addStripesToGroup(innerCircleGroup);
 
     r.circle(r.width / 2, r.height / 2, r.width / 2 - params.bgPadding);
-    //r.circle(
-        //r.width / 2, r.height / 2, r.width / 2 - 2 * params.bgPadding);
+    r.circle(
+        r.width / 2, r.height / 2, r.width / 2 - 2 * params.bgPadding2);
     r.draw();
     
-    var circleMask = d3.select('circle').remove();
-    //var innerCircleMask = d3.select('circle:nth-child(2)').remove();
+    var circleMask = d3.select('circle:nth-of-type(1)').remove();
+    var innerCircleMask = d3.select('circle:nth-of-type(1)').remove();
     d3.select('svg')
         .append('defs')
         .append('clipPath').attr('id', 'circle-mask')
         .append(function() {
             return circleMask.node();
         });
-//    d3.select('defs')
-//        .append('clipPath').attr('id', 'inner-circle-mask')
-//        .append(function() {
-//            return innerCircleMask.node();
-//        });
+    d3.select('defs')
+        .append('clipPath').attr('id', 'inner-circle-mask')
+        .append(function() {
+            return innerCircleMask.node();
+        });
     d3.select('g:nth-child(2)').attr('clip-path', 'url(#circle-mask)');
-    //d3.select('g:nth-child(3)').attr('clip-path', 'url(#inner-circle-mask)');
+    d3.select('g:nth-child(3)').attr('clip-path', 'url(#inner-circle-mask)');
 }
 
 r.on('click', function() {
